@@ -5,6 +5,7 @@ public class addIndex {
         int index;
         int newValue;
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+        int[] newArr = new int[arr.length+1];
         System.out.println("mang truoc khi them");
         showArr(arr);
         Scanner scanner = new Scanner(System.in);
@@ -12,12 +13,15 @@ public class addIndex {
         index = scanner.nextInt();
         System.out.println("Nhap phan tu muon them");
         newValue = scanner.nextInt();
-        for (int i = arr.length-1; i > index ; i--) {
-            arr[i] = arr[i-1];
+        for (int i = 0; i < index; i++) {
+            newArr[i] = arr[i];
         }
-        arr[index] = newValue;
+        for (int i = arr.length; i > index ; i--) {
+            newArr[i] = arr[i-1];
+        }
+        newArr[index] = newValue;
         System.out.println("mang sau khi them");
-        showArr(arr);
+        showArr(newArr);
     }
     public static void showArr(int []arr){
         for (int a: arr) {
