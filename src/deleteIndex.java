@@ -4,6 +4,7 @@ public class deleteIndex {
     public static void main(String[] args) {
         int num;
         int[] arr = {1,2,3,4,5,6,7,8,9};
+        int[] newArr = new int[arr.length-1];
         System.out.println("mang cho truoc");
         for (int a: arr) {
             System.out.println(a);
@@ -12,11 +13,14 @@ public class deleteIndex {
         System.out.println("moi ban nhap phan tu can xoa trong mang");
         num = scanner.nextInt();
         int index = findIndex(num,arr);
+        for (int i = 0; i < index; i++) {
+            newArr[i] = arr[i];
+        }
         for (int i = index; i <arr.length-1 ; i++) {
-            arr[i] = arr[i+1];
+            newArr[i] = arr[i+1];
         }
         System.out.println("mang sau khi xoa ");
-        for (int a:arr) {
+        for (int a:newArr) {
             System.out.println(a);
         }
     }
